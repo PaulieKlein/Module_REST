@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Bankonet - Employé</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js">	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-route.min.js">	</script>
+	<script src="app/bankonet.js"></script>
+	<script src="app/controllers/BankonetController.js"></script>
+	<script src="app/controllers/HomeCtrl.js"></script>
+	<script src="app/controllers/NewCtrl.js"></script>
+	<script src="app/service/factory.js"></script>
+</head>
+<body ng-app="bankonet">
+	<header>
+		<ng-include src="'views/header.html'"></ng-include>
+	</header>
+			
+			<a href="#/">Home</a>
+			<a href="#/new">Création Employé</a>
+		<br>
+		<br>
+		<div ng-view ></div>
+
+
+	<footer>
+		<ng-include src="'views/footer.html'"></ng-include>
+	</footer>
+</body>
+</html>

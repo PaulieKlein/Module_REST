@@ -1,0 +1,20 @@
+
+		<form ng-submit="newctrl.save(BankonetForm)" name="BankonetForm" novalidate>
+		<label>Nom : </label><input type="text"  ng-model="newctrl.employe.nom" name="nom">
+		<br><br>
+
+		<label>Prénom : </label><input type="text" ng-model="newctrl.employe.prenom" name="prenom"><br><br>
+
+		<label>Adresse : </label>
+		<label>Numéro : </label>
+  			<input type ="number"  ng-model ="newctrl.employe.adresse.numero" name="numero">
+		
+		<label>Rue : </label>
+  			<input type ="text"  ng-model ="newctrl.employe.adresse.rue" name="rue">
+
+  		<label>Ville : </label>
+  			<input type ="text"  ng-model ="newctrl.employe.adresse.ville" name="ville">
+		 <br><br>
+		<button type = "submit">Créer employer</button>
+</form>
+		

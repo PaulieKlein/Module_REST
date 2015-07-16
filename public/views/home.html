@@ -1,0 +1,22 @@
+<style type="text/css">
+table,td{
+	padding : 10px;
+}
+</style>
+<table border="1">
+	<tr>
+		<th>Id n°</th>
+		<th>Nom</th>
+		<th>Prenom</th>
+		<th>Adresse</th>
+		<th  colspan="2">Action</th>
+	</tr>
+	<tr ng-repeat = "employe in homectrl.employes">
+		<td>{{employe.id}}</td>
+		<td>{{employe.nom}}</td>
+		<td>{{employe.prenom}}</td>
+		<td>{{employe.adresse}}</td>
+		<td><button  ng-click="homectrl.delete(employe)">supprimer</button></td>
+		<td><button  ng-click="homectrl.update(employe)">modifier</button></td>
+	</tr>
+</table>
