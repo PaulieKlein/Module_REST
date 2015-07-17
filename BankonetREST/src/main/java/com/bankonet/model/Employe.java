@@ -13,7 +13,7 @@ import javax.persistence.*;
 	private int id;
 	private String nom;
 	private String prenom;
-
+	//big décimal pour salaire
 	
 
 	@Embedded

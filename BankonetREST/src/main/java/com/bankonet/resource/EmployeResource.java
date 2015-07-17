@@ -59,20 +59,15 @@ public class EmployeResource {
 	}
 
 	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response post(@FormParam("nom") String nom,@FormParam("prenom") String prenom, @FormParam("numero")int num, @FormParam("rue")String rue,@FormParam("ville") String ville) {
-		Employe employe = new Employe();
-		Adresse adresse = new Adresse();
+	public Response post(Employe employe) {
+
+		Employe emp = new Employe();
 		try{
-			adresse.setNumero(num);
-			adresse.setRue(rue);
-			adresse.setVille(ville);
-			employe.setNom(nom);
-			employe.setPrenom(prenom);
-			employe.setAdresse(adresse);
-			
-			employe = employeService.createEmploye(employe);
-			ResponseBuilder builder = Response.status(200).entity(employe);
+
+			emp = employeService.createEmploye(employe);
+			ResponseBuilder builder = Response.status(200).entity(emp);
 			return  builder.build();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -83,11 +78,12 @@ public class EmployeResource {
 	}
 	
 	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response put(@FormParam("id") int id,@FormParam("nom") String nom,@FormParam("prenom") String prenom, @FormParam("num")int num, @FormParam("rue")String rue,@FormParam("ville") String ville) {
-		Employe employe = new Employe();
+	public Response put(@FormParam("id") int id,Employe employe) {
+		Employe emp= new Employe();
 		try{
-			employe = employeService.modifEmploye(id, nom, prenom, num, rue, ville);
+			emp = employeService.modifEmploye(id, employe);
 			
 		}catch (Exception e){Reponse("404 Bad Request");}
 		
@@ -98,13 +94,11 @@ public class EmployeResource {
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void delete(@PathParam("id") @DefaultValue("123") Integer id) {
-	
+	public void delete(@PathParam("id") @DefaultValue("123") int id) {
+
 		try{
 			
-			employeService.deleteEmploye(id);
-
-		      
+			employeService.deleteEmploye(id);    
 		     
   	} catch(Exception e){
   		e.printStackTrace();

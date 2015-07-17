@@ -62,33 +62,25 @@ public class EmployeService {
 	}
 	
 
-	public Employe modifEmploye(int id,String nom, String prenom,int num,String rue,String ville) {
+	public Employe modifEmploye(int id,Employe employe) {
 		
-		Adresse adresse = new Adresse();
 		
-		Employe employe = 	em.find(Employe.class, id);
-		if(employe!=null){
+		Employe emp = 	em.find(Employe.class, id);
+		if(emp!=null){
 			
-			adresse.setNumero(num);
-			adresse.setRue(rue);
-			adresse.setVille(ville);
-			employe.setNom(nom);
-			employe.setNom(nom);
-			employe.setPrenom(prenom);
-			employe.setAdresse(adresse);
-			em.persist(employe);
+			em.merge(emp);
 		
 
-		}else {System.out.println("Cet employe n'exite pas");}
+		}else {System.out.println("Cet employé n'exite pas");}
 		
-		return employe;	
+		return emp;	
 	}
 	
 
 	public void deleteEmploye(int id) {
-	      String texteQuery1 = "Delete e From Employe as e where e.id =:id ";
-	      Query query1 = em.createQuery(texteQuery1);
-	      query1.setParameter("id", id);
+		System.out.println("identifiant delete "+ id);
+		Employe employe = 	em.find(Employe.class, id); 
+		em.remove(employe);
 		}
 	}
 	

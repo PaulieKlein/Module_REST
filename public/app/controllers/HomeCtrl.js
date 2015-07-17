@@ -9,7 +9,7 @@ function fetchemployes() {
     fetchemployes()
 
      homectrl.delete = function (employe) {
-        BankonetService.delete(employe.id)
+        BankonetService.delete(employe)
             
     }
 
