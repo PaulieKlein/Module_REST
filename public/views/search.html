@@ -1,13 +1,13 @@
 
 <div class="container">
 
-<p>Recherché un employé : </p> 
+<h3>Recherché un employé : </h3> 
 <form ng-submit="searchctrl.get(BankonetForm)" name="BankonetForm" novalidate>
 <label>Id : </label><input type="text"  ng-model="searchctrl.employe.id" name="id">
 <button type = "submit">rechercher</button>
 </form>
 
-<p>Employé n° {{searchctrl.employe.id}} </p>
+<h2>Employé n° {{searchctrl.employe.id}} </h2>
 
 <ul class="list-group">
 	<li class="list-group-item">Nom : {{searchctrl.employe.nom}}</li>
