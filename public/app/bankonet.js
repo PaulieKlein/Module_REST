@@ -11,6 +11,11 @@ angular.module("bankonet",['ngRoute'])
 			controller : "NewController",
 			controllerAs : "newctrl"
 		})
+		.when("/search",{
+			templateUrl :"views/search.html",
+			controller : "SearchController",
+			controllerAs : "searchctrl"
+		})
 		.otherwise({
 			redirectTo:"/"
 		});

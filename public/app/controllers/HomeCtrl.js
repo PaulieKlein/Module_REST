@@ -16,5 +16,4 @@ function fetchemployes() {
     homectrl.update = function(employe){
         $location.path("/update/" +employe.id)
     }
-
 })

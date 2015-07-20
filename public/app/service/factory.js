@@ -11,8 +11,8 @@ angular.module("bankonet")
 					
 			},
 
-			get : function(employe){
-				return $http.get("http://localhost:8090/BankonetREST/api/Employes"+employe.id).then(function (result) {
+			get : function(id){
+				return $http.get("http://localhost:8090/BankonetREST/api/Employes/"+id).then(function (result) {
                     return result.data;
                 })
 			},

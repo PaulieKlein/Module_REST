@@ -1,0 +1,18 @@
+
+<div class="container">
+
+<p>Recherché un employé : </p> 
+<form ng-submit="searchctrl.get(BankonetForm)" name="BankonetForm" novalidate>
+<label>Id : </label><input type="text"  ng-model="searchctrl.employe.id" name="id">
+<button type = "submit">rechercher</button>
+</form>
+
+<p>Employé n° {{searchctrl.employe.id}} </p>
+
+<ul class="list-group">
+	<li class="list-group-item">Nom : {{searchctrl.employe.nom}}</li>
+	<li class="list-group-item">Prénom : {{searchctrl.employe.prenom}}</li>
+	<li class="list-group-item">Adresse : {{searchctrl.employe.adresse.numero}} {{searchctrl.employe.adresse.rue}} {{searchctrl.employe.adresse.ville}}</li>
+</ul>
+
+</div>
