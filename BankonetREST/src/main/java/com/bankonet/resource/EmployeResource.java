@@ -80,10 +80,10 @@ public class EmployeResource {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response put(@FormParam("id") int id,Employe employe) {
+	public Response put(Employe employe) {
 		Employe emp= new Employe();
 		try{
-			emp = employeService.modifEmploye(id, employe);
+			emp = employeService.modifEmploye(employe);
 			
 		}catch (Exception e){Reponse("404 Bad Request");}
 		

@@ -47,7 +47,7 @@ public class EmployeService {
 			return e;
 		}
 		else {
-			System.out.println("Cet employe n'exite pas");
+			System.out.println("Cet employé n'exite pas");
 		}
 		
 		return emp;
@@ -62,14 +62,12 @@ public class EmployeService {
 	}
 	
 
-	public Employe modifEmploye(int id,Employe employe) {
-		
-		
-		Employe emp = 	em.find(Employe.class, id);
+	public Employe modifEmploye(Employe employe) {
+		System.out.println("employe id : "+employe.getId());
+		Employe emp = 	em.find(Employe.class, employe.getId());
 		if(emp!=null){
 			
-			em.merge(emp);
-		
+			em.merge(employe);
 
 		}else {System.out.println("Cet employé n'exite pas");}
 		
