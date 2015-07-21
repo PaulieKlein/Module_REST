@@ -1,0 +1,18 @@
+.MyBody{
+	background-color: #FFFFE0;
+}
+
+.MyHeader,.MyFooter{
+	/*background-color: #0099CC;*/
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+  font-size: 1.2em;
+}
