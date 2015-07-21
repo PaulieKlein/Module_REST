@@ -16,6 +16,11 @@ angular.module("bankonet",['ngRoute'])
 			controller : "SearchController",
 			controllerAs : "searchctrl"
 		})
+		.when("/update/:id",{
+			templateUrl :"views/update.html",
+			controller : "UpdateController",
+			controllerAs : "updatectrl"
+		})
 		.otherwise({
 			redirectTo:"/"
 		});

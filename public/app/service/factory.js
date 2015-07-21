@@ -31,8 +31,8 @@ angular.module("bankonet")
 			},
 
 			update : function(employe){
-					
-					return $http.update("http://localhost:8090/BankonetREST/api/Employes/"+employe.id,employe)
+					console.log(employe)
+					return $http.put("http://localhost:8090/BankonetREST/api/Employes/",employe)
 			}
 		}
 

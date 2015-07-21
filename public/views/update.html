@@ -1,18 +1,21 @@
-<form ng-submit="newctrl.update(BankonetForm)" name="BankonetForm" novalidate>
-		<label>Nom : </label><input type="text"  ng-model="newctrl.employe.nom" name="nom">
-		<br><br>
+<div class="container">
+	<h2>Modification Employé n° {{updatectrl.employe.id}}</h2>
+	<form ng-submit="updatectrl.update(BankonetForm)" name="BankonetForm" novalidate>
+			<label>Nom : </label><input type="text"  ng-model="updatectrl.employe.nom" name="nom" ng-value="{{updatectrl.employe.nom}}">
+			<br><br>
 
-		<label>Prénom : </label><input type="text" ng-model="newctrl.employe.prenom" name="prenom"><br><br>
+			<label>Prénom : </label><input type="text" ng-model="updatectrl.employe.prenom" name="prenom" ng-value="{{updatectrl.employe.prenom}}"><br><br>
 
-		<label>Adresse : </label>
-		<label>Numéro : </label>
-  			<input type ="number"  ng-model ="newctrl.employe.adresse.numero" name="numero">
-		
-		<label>Rue : </label>
-  			<input type ="text"  ng-model ="newctrl.employe.adresse.rue" name="rue">
+			<label>Adresse : </label>
+			<label>Numéro : </label>
+	  			<input type ="number"  ng-model ="updatectrl.employe.adresse.numero" name="numero" ng-value="{{updatectrl.employe.adresse.numero}}">
+			
+			<label>Rue : </label>
+	  			<input type ="text"  ng-model ="updatectrl.employe.adresse.rue" name="rue" ng-value="{{updatectrl.employe.adresse.rue}}">
 
-  		<label>Ville : </label>
-  			<input type ="text"  ng-model ="newctrl.employe.adresse.ville" name="ville">
-		 <br><br>
-		<button type = "submit">Créer employer</button>
-</form>
+	  		<label>Ville : </label>
+	  			<input type ="text"  ng-model ="updatectrl.employe.adresse.ville" name="ville" ng-value="{{updatectrl.employe.adresse.ville}}">
+			 <br><br>
+			<button type = "submit">Modifier un employé</button>
+	</form>
+</div>
